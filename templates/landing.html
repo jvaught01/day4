@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Showtimes | #30DayDevOpsChallenge</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sports Showtimes</h1>
+            <div class="header-accent"></div>
+            <div class="challenge-badge">#30DayDevOpsChallenge</div>
+        </header>
+
+        <div class="architecture-section">
+            <h2>System Architecture</h2>
+            <div class="architecture-diagram">
+                <div class="arch-component">
+                    <i class="fas fa-users"></i>
+                    <span>Users</span>
+                </div>
+                <div class="arch-arrow">→</div>
+                <div class="arch-component">
+                    <i class="fas fa-globe"></i>
+                    <span>API Gateway</span>
+                </div>
+                <div class="arch-arrow">→</div>
+                <div class="arch-component">
+                    <i class="fas fa-balance-scale"></i>
+                    <span>ALB</span>
+                </div>
+                <div class="arch-arrow">→</div>
+                <div class="arch-component">
+                    <i class="fas fa-container-storage"></i>
+                    <span>ECS Cluster</span>
+                </div>
+                <div class="arch-arrow">→</div>
+                <div class="arch-component">
+                    <i class="fas fa-flask"></i>
+                    <span>Flask App</span>
+                </div>
+            </div>
+            <div class="tech-stack">
+                <span class="tech-badge">AWS</span>
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">Flask</span>
+                <span class="tech-badge">Docker</span>
+                <span class="tech-badge">ECS</span>
+            </div>
+        </div>
+        
+        <div class="games-container">
+            <div class="loading-spinner" id="loading">
+                <div class="spinner"></div>
+            </div>
+            <div id="games-grid"></div>
+        </div>
+    </div>
+    <div class="poll-section">
+        <h2>Super Bowl LVIII Prediction Poll</h2>
+        <div class="poll-container">
+            <div class="poll-options">
+                <div class="poll-option" data-team="Chiefs">
+                    <img src="https://serpapi.com/searches/6791435cc2a5b143fe206802/images/16fc75e2607e2679d44b03632d85b1cfcc334782a233aa83c6c643c84cdc7ccef21b02cc1dbd409ae71bd233627e5e57.png" alt="Chiefs">
+                    <span>Kansas City Chiefs</span>
+                    <div class="vote-bar">
+                        <div class="vote-progress" id="Chiefs-progress"></div>
+                        <span class="vote-percentage" id="Chiefs-percentage">0%</span>
+                    </div>
+                    <button class="vote-btn" data-team="Chiefs">Vote</button>
+                </div>
+                <div class="poll-option" data-team="Bills">
+                    <img src="https://serpapi.com/searches/6791435cc2a5b143fe206802/images/16fc75e2607e2679d44b03632d85b1cfcc334782a233aa83cdc75853bfe95aeafbdcd69b5dfe275131ae5f876cf63370.png" alt="Bills">
+                    <span>Buffalo Bills</span>
+                    <div class="vote-bar">
+                        <div class="vote-progress" id="Bills-progress"></div>
+                        <span class="vote-percentage" id="Bills-percentage">0%</span>
+                    </div>
+                    <button class="vote-btn" data-team="Bills">Vote</button>
+                </div>
+                <div class="poll-option" data-team="Eagles">
+                    <img src="https://serpapi.com/searches/6791435cc2a5b143fe206802/images/16fc75e2607e2679d44b03632d85b1cfd78cd99fc631830000929c36bbc4e7119eace05b0dafc3b629af2587deabb4a9.png" alt="Eagles">
+                    <span>Philadelphia Eagles</span>
+                    <div class="vote-bar">
+                        <div class="vote-progress" id="Eagles-progress"></div>
+                        <span class="vote-percentage" id="Eagles-percentage">0%</span>
+                    </div>
+                    <button class="vote-btn" data-team="Eagles">Vote</button>
+                </div>
+                <div class="poll-option" data-team="Commanders">
+                    <img src="https://serpapi.com/searches/6791435cc2a5b143fe206802/images/16fc75e2607e2679d44b03632d85b1cfd78cd99fc6318300dcd6528b575d2c337d298f48c43da95b81611f822bcf11d4.png" alt="Commanders">
+                    <span>Washington Commanders</span>
+                    <div class="vote-bar">
+                        <div class="vote-progress" id="Commanders-progress"></div>
+                        <span class="vote-percentage" id="Commanders-percentage">0%</span>
+                    </div>
+                    <button class="vote-btn" data-team="Commanders">Vote</button>
+                </div>
+            </div>
+            <div class="total-votes">Total Votes: <span id="total-votes">0</span></div>
+        </div>
+    </div>
+    <script src="/static/home.js"></script>
+</body>
+</html>
