@@ -6,7 +6,7 @@ A containerized API management system for sports data queries, featuring a custo
 
 ## Architecture
 
-![Architecture Diagram](architecture-diagram.png)
+![Architecture Diagram](architecture-diagram.svg)
 
 The system consists of:
 
