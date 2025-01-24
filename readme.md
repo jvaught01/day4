@@ -22,13 +22,13 @@ The system consists of:
 - Sports API key from sportsdata.io
 - Docker installed locally
 - Domain name (for custom domain setup)
-- A willingness to debug if you run into CORS erros 😂 
+- A willingness to debug if you run into a CORS error 😂 
 
 ## Setup Instructions
 
 ### 1. Clone the Repository
 ```bash
-git clone MY REPO
+git clone https://github.com/jvaught01/day4.git
 cd day4
 ```
 
@@ -50,6 +50,14 @@ docker tag sports-api:latest <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/sp
 # Push to ECR
 docker push <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/sports-api:sports-api-latest
 ```
+
+### 4. Create AWS Bucket 
+``` bash
+aws s3api create-bucket --bucket sports-showtime-votes --region us-east-1
+aws s3api put-bucket-policy --bucket sports-showtime-votes --policy file://bucket-policy.json
+```
+
+
 
 ### 4. ACM Certificate Setup
 
@@ -198,6 +206,8 @@ docker push <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/sports-api:sports-a
 
 ## Environment Variables
 - `SPORTS_API_KEY`: Your sportsdata.io API key
+- `CUSTOM_DOMAIN`: Your custom domain
+- `CUSTOM_API_DOMAIN`: Your custom API domain
 
 ## Troubleshooting
 1. API Gateway 502 errors:
