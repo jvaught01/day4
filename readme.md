@@ -1,7 +1,7 @@
 # Sports API Management System With Landing Page and realtime polling
 
 ## Overview
-A containerized API management system for sports data queries, featuring a custom domain and landing page. Built with AWS ECS (Fargate), API Gateway, Load Balancing, DynamoDB, and integrated with external sports data providers. 
+A containerized API management system for sports data queries, featuring a custom domain and landing page. Built with AWS ECS (Fargate), API Gateway, Load Balancing, S3, and integrated with external sports data providers. 
 
 
 ## Architecture
