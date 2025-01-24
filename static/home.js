@@ -1,6 +1,3 @@
-
-const API_DOMAIN = '{{ api_domain }}';
-
 document.addEventListener('DOMContentLoaded', () => {
     fetchGames();
     loadVotes();
@@ -11,7 +8,7 @@ async function fetchGames() {
     const gamesGrid = document.getElementById('games-grid');
     
     try {
-        const response = await fetch(`${API_DOMAIN}/api/gametimes`);
+        const response = await fetch(`${API_DOMAIN}api/gametimes`);
         const data = await response.json();
         
         if (data.games && data.games.length > 0) {
@@ -101,7 +98,7 @@ function updateVoteDisplay() {
 
 async function loadVotes() {
     try {
-        const response = await fetch(`${API_DOMAIN}/api/votes`);
+        const response = await fetch(`${API_DOMAIN}api/votes`);
         const data = await response.json();
         votes = data;
         updateVoteDisplay();
@@ -116,7 +113,7 @@ document.querySelectorAll('.vote-btn').forEach(button => {
 
         const team = this.dataset.team;
         try {
-            const response = await fetch(`${API_DOMAIN}/api/votes`, {
+            const response = await fetch(`${API_DOMAIN}api/votes`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
